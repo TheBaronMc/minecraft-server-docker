@@ -2,10 +2,10 @@ version: '3.1'
 
 services:
   minecraft:
-    image: minecraft-server:1.16.4
+    image: baronmc/minecraft-server:${MINCRAFT_VERSION}
     container_name: spigot
     restart: always
     volumes:
-     - "${PWD}:/server/"
+     - "${SERVER_DIR}:/server/"
     ports:
      - "25565:25565"
