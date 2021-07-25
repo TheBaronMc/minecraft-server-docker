@@ -1,7 +1,7 @@
-FROM openjdk:8
+FROM openjdk:16-alpine
 
 # The version of minecraft you want for your server
-ENV MINCRAFT_VERSION="1.16.5" 
+ENV MINCRAFT_VERSION="1.17.1" 
 
 # Minecraft server port
 EXPOSE 25565
@@ -10,7 +10,7 @@ RUN mkdir JARS
 RUN mkdir server
 
 # Get basics packages
-RUN apt-get update -y && apt-get install git wget nano -y
+RUN apk update && apk add git wget nano
 
 # Download the BuildTools.jar from https://hub.spigotmc.org/jenkins/job/BuildTools/
 WORKDIR "/JARS"
